@@ -6,16 +6,16 @@ import { config } from "dotenv";
 config();
 
 const SITE_URL = process.env.SITE_URL;
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const USER_TOKEN = process.env.USER_TOKEN;
 const GIST_ID = process.env.GIST_ID;
 const WEBHOOK_URL = process.env.WEBHOOK_URL;
 
-if (!SITE_URL || !GITHUB_TOKEN || !GIST_ID || !WEBHOOK_URL) {
+if (!SITE_URL || !USER_TOKEN || !GIST_ID || !WEBHOOK_URL) {
 	throw new Error("Missing environment variables");
 }
 
 const octokit = new Octokit({
-	auth: GITHUB_TOKEN,
+	auth: USER_TOKEN,
 });
 
 const fetchPageHTML = async (retries = 3, delay = 1000) => {
