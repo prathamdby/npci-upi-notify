@@ -5,10 +5,10 @@ import { config } from "dotenv";
 
 config();
 
-const SITE_URL = process.env.SITE_URL;
-const USER_TOKEN = process.env.USER_TOKEN;
-const GIST_ID = process.env.GIST_ID;
-const WEBHOOK_URL = process.env.WEBHOOK_URL;
+const SITE_URL = process.env.SITE_URL.trim();
+const USER_TOKEN = process.env.USER_TOKEN.trim();
+const GIST_ID = process.env.GIST_ID.trim();
+const WEBHOOK_URL = process.env.WEBHOOK_URL.trim();
 
 if (!SITE_URL || !USER_TOKEN || !GIST_ID || !WEBHOOK_URL) {
 	throw new Error("Missing environment variables");
