@@ -26,6 +26,6 @@ jobs:
         run: bun run index.js
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER_TOKEN: ${{ secrets.USER_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
